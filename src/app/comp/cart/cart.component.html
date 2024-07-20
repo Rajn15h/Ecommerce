@@ -1,0 +1,43 @@
+<div>
+    @if (cartproduct.length===0) {
+    <p-card header="Your Cart Is Empty">
+        <p class="m-0">
+            Must Add Item Cart Before you checkout
+        </p>
+    </p-card>
+    }
+</div>
+@if (cartproduct.length>0) {
+<p-table [value]="cartproduct" [tableStyle]="{'min-width': '60rem'}">
+    <ng-template pTemplate="caption">
+        <div class="flex align-items-center justify-content-between">
+            Your Cart Component
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Action</th>
+
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+        <tr>
+            <td>{{product.title}}</td>
+            <td><img src="{{product.images}}" [alt]="product.name" width="100" class="shadow-4" /></td>
+            <td>{{product.price }}</td>
+            <td>{{product.category}}</td>
+            <button (click)="removeFromCart(product)"
+                class="bg-blue-500 py-3 px-3 ml-5 rounded text-white ">Removeitem</button>
+
+        </tr>
+    </ng-template>
+</p-table>
+}
+<div class="flex align-items-center justify-content-between">
+    <p>Total Price: ${{ totalPrice }}</p>
+
+</div>

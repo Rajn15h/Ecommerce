@@ -1,0 +1,28 @@
+
+
+
+@if(exclusive){
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<div class="bg-sky-950	 py-9 text-xl text-white flex h-[90px]">
+    <h1 (click)="goToHome()  " class="cursor-pointer">E-commerce Product</h1>
+    
+    <div class="flex flex-row pl-[400px]" >
+        <h1 routerLink="/home" class="pl-5 cursor-pointer">Home</h1>
+        <h1 routerLink="/shop" class="pl-5 cursor-pointer">Shop</h1>
+        <h1 routerLink="/blog" class="pl-5 cursor-pointer">Blog</h1>
+        <h1 routerLink="/about" class="pl-5 cursor-pointer">About</h1>
+        <h1 routerLink="/contact"  class="pl-5 cursor-pointer">Contact </h1>
+
+    </div>
+
+    <div class="px-3 ml-[500px] gap-2">
+       
+        <i  routerLink="/cart" class="fa-solid fa-cart-shopping cursor-pointer" >{{cartItem}}</i>
+    </div>
+    @if(auth.isAuthenticated()){
+        <button (click)="logout()">Logout</button>
+    }
+</div>
+
+}

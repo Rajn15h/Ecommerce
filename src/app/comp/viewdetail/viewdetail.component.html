@@ -1,0 +1,25 @@
+
+    <button routerLink="/home" class="py-3 px-5 m-9 bg-blue-500 rounded  ">goback</button>
+<div class="flex ">
+    <div class="py-9 px-9 m-9 border border-black">
+        <img (click)="showDialog()" 
+        
+        src="{{product?.images}}" class="h-[300px] cursor-pointer "/>
+        
+        <button   (click)="goToCart(product)"   routerLink="/cart" class="bg-blue-500 px-3 py-2 rounded ml-8">AddToCart</button>
+    </div>
+    <div class="w-full h-[300px] py-9 px-9 m-9 ">
+        <h1 class="text-xl mb-2">
+            {{product.title}}
+        </h1>
+        <p class="mb-2"><b>Price</b>:${{product.price}}</p>
+        <p class="mb-2"><b>Category</b>:{{product.category}}</p>
+        <p class="mb-2"><b>Description</b>:{{product.description}}</p>
+        <p><b>Dicount</b>:{{product.discountPercentage}}</p>
+    </div>
+</div>
+
+
+
+
+ 

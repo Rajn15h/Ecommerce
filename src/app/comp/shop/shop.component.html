@@ -1,0 +1,27 @@
+<div class="flex flex-row justify-between">
+    <h1 class="pl-9 text-2xl font-bold font-sans">PRODUCT OVERVIEW</h1>
+    
+  </div>
+  <div class="w-full grid sm:grid-cols-3 md:grid-cols-4 pt-5 ">
+      @for (item of displayedData; track item) {
+          
+      <div class=" flex flex-col gap-2 px-4 py-2 border cursor-pointer hover:shadow-xl ">
+  
+          <img routerLink="/view-details/{{item.id}}" src={{item.thumbnail}} alt=""
+              class="scaleImage w-[100px] h-[150px] md:w-[200px] md:h-[250px]  ml-[70px] mt-2  hover:scale-110 duration-700">
+          <p class="hover:text-[blue] text-center">{{item.title}}</p>
+          <p class="text-[green] font-bold text-center">{{item.price}}</p>
+          <button routerLink="/view-details/{{item.id}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-9 mx-9 rounded hover:scale-110 duration-700" >viewdetails</button>
+          <button (click)="goTocart(item)"  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-9 mx-9 rounded hover:scale-110 duration-700">AddToCart</button> 
+      </div>
+      }
+  </div>
+  <div class="text-center my-4">
+    @if(dataIndex < product.length){
+      <button (click)="loadMore()"  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl ">Load More</button>
+    }
+  @if(dataIndex > itemsPerPage){
+    <button (click)="showLess()"  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl ml-9" >Show Less</button>
+  }
+  </div>
+  

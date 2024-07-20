@@ -1,0 +1,27 @@
+@if(!authService.isAuthenticated()){
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+  <div class="bg-white p-8 rounded-lg shadow-md w-96">
+    <form (ngSubmit)="login()">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="userId">
+          UserNmae:
+        </label>
+        <input [(ngModel)]="username" name="userId" type="text" id="userId"
+          class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+          required />
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+          Password
+        </label>
+        <input [(ngModel)]="password" name="password" type="password" id="password"
+          class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+          required />
+      </div>
+      <button type="submit"
+        class="w-full bg-indigo-500 text-white py-2 rounded-lg hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">
+        Login</button>
+    </form>
+  </div>
+</div>
+}
